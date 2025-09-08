@@ -45,4 +45,3 @@ npm run build
 
 We get the dist assets and a HTML.
 
-````
