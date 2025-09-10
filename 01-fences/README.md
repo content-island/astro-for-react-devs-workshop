@@ -33,7 +33,8 @@ If we run it, we’ll see the new title.
 npm run dev
 ```
 
-And now you may be wondering: what are _Fences_?  
+And now you may be wondering: what are _Fences_?
+
 They’re code blocks that run on the server. If we’re in SSG mode, they only run once — when the site is generated.
 
 Let’s see it more clearly: we’ll fetch a random value from an API and display it on the page.
@@ -44,9 +45,9 @@ _./src/pages/index.astro_
 
 ```diff
 ---
-+ const res = await fetch("https://dog-api.kinduff.com/api/facts");
-+ const data = await res.json();
-+ const title = data.facts[0];
++ const res = await fetch("https://dogapi.dog/api/v2/facts");
++ const response = await res.json();
++ const title = response?.data[0]?.attributes?.body ?? "Ooops api not working?";
 - const title = "Hello React Alicante";
 ---
 ```
@@ -78,17 +79,22 @@ _./src/pages/index.astro_
 	</head>
 	<body>
 		<h1>{title}</h1>
-		<button id="cat-fact-button">Get Cat Fact</button>
-		<p id="cat-fact"></p>
++		<button id="cat-fact-button">Get Cat Fact</button>
++		<h2 id="cat-fact"></h2>
 	</body>
 </html>
 
 + <script>
-+  document.getElementById("cat-fact-button").addEventListener("click", async () => {
++ const button = document.getElementById("cat-fact-button");
++ const factEl = document.getElementById("cat-fact");
++
++ if (button && factEl) {
++  button.addEventListener("click", async () => {
 +    const res = await fetch("https://catfact.ninja/fact");
 +    const data = await res.json();
-+    document.getElementById("cat-fact").innerText = data.fact;
++    factEl.innerText = data.fact;
 +  });
++}
 + </script>
 ```
 
