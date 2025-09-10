@@ -5,30 +5,29 @@ const title = response?.data[0]?.attributes?.body ?? "Ooops api not working?";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>{title}</h1>
-		<button id="cat-fact-button">Get Cat Fact</button>
-		<h2 id="cat-fact"></h2>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <button id="cat-fact-button">Get Cat Fact</button>
+    <h2 id="cat-fact"></h2>
+  </body>
 </html>
 
 <script>
-const button = document.getElementById("cat-fact-button");
-const factEl = document.getElementById("cat-fact");
+  const button = document.getElementById("cat-fact-button");
+  const factEl = document.getElementById("cat-fact");
 
-if (button && factEl) {
-  button.addEventListener("click", async () => {
-    const res = await fetch("https://catfact.ninja/fact");
-    const data = await res.json();
-    factEl.innerText = data.fact;
-  });
-}
+  if (button && factEl) {
+    button.addEventListener("click", async () => {
+      const res = await fetch("https://catfact.ninja/fact");
+      const data = await res.json();
+      factEl.innerText = data.fact;
+    });
+  }
 </script>
-

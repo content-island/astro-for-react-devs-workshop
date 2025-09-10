@@ -25,7 +25,7 @@ npm run dev
 
 ## Analyzing the project structure
 
-````
+```
 blank-project/
 ├── public/             # Static assets (copied directly into final dist build folder)
 ├── src/
@@ -45,3 +45,30 @@ npm run build
 
 We get the dist assets and a HTML.
 
+## Prettier
+
+Before going further, let's install Prettier to format our code.
+
+```bash
+npm install --save-dev prettier
+```
+
+```bash
+npm install prettier-plugin-astro --save-dev
+```
+
+Create a `.prettierrc` file in the root of the project with the following content:
+
+```json
+{
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}
+```
