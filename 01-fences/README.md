@@ -1,8 +1,8 @@
 # Fences
 
-Vamos a bucear en los componentes de Astro, si te fijas se parecen un poco a Vue, tienes código, HTML y estilos en un mismo archivo.
+Let’s dive into Astro components. If you take a look, they’re a bit like Vue — you’ve got code, HTML, and styles all in the same file.
 
-Vamos a hacer un prueba, vamos a cambiar el _h1_ de la página principal por un texto que tengamos definido en una variable.
+Let’s try something out: we’ll change the _h1_ of the homepage with text defined in a variable.
 
 _./src/pages/index.astro_
 
@@ -25,19 +25,20 @@ _./src/pages/index.astro_
 +    <h1>{title}</h1>
 ```
 
-> El binding es exactamente igual al de React, usamos llaves para indicar que es una variable.
+> Binding works exactly the same as in React — we use curly braces to indicate a variable.
 
-Si ejecutamos podemos ver el nuevo título.
+If we run it, we’ll see the new title.
 
 ```bash
 npm run dev
 ```
 
-¿Y aquí te estás preguntando que son las _Fences_? Es código que se ejecuta en servidor y que si estamos en modo SSG sólo se ejecuta una vez, cuando se genera el sitio.
+And now you may be wondering: what are _Fences_?  
+They’re code blocks that run on the server. If we’re in SSG mode, they only run once — when the site is generated.
 
-Vamos a verlo de forma más claro, vamos a leer un valor random de una API y lo vamos a mostrar en la página.
+Let’s see it more clearly: we’ll fetch a random value from an API and display it on the page.
 
-Por ejemplo hay una api pública que devuelve un hecho sobre perros, vamos a usarla.
+For example, there’s a public API that returns a dog fact. Let’s use it.
 
 _./src/pages/index.astro_
 
@@ -50,19 +51,19 @@ _./src/pages/index.astro_
 ---
 ```
 
-Let's check the result in the browser, we should see a random dog fact.
+Let’s check the result in the browser — we should see a random dog fact.
 
-If we make a build, and check the files generated in _./dist/index.html_, we will see that the dog fact is already there, because it was fetched at build time.
+If we make a build and look at the generated files in _./dist/index.html_, we’ll see the dog fact already there, because it was fetched at build time.
 
 ```bash
 npm run build
 ```
 
-> Si estamos en modo SSR, este código se ejecutará en cada petición en servidor, nunca se ejecutará desde el navegador.
+> If we’re in SSR mode, this code will run on every server request. It never runs in the browser.
 
-¿Y puedo ejecutar código en el navegador? Claro que sí, incluso puedes usar React, Vue o Svelte para hacerlo.
+But can we run code in the browser? Of course! You can even use React, Vue, or Svelte for that.
 
-Vamos con un ejemplo sencillo, añadimos un botón que muestre un fact de gatos, el botón se va a llamar "Get Cat Fact".
+Let’s do a simple example: we’ll add a button that fetches and displays a cat fact. The button will be called **“Get Cat Fact”**.
 
 _./src/pages/index.astro_
 
@@ -91,27 +92,27 @@ _./src/pages/index.astro_
 + </script>
 ```
 
-Si ejecutamos podemos ver que al pulsar el botón se muestra un hecho sobre gatos.
+If we run it, we’ll see that clicking the button displays a cat fact.
 
 ```bash
 npm run dev
 ```
 
-Y ahora te surgirá una duda ¿Cómo puedo depurar esto?
+Now you might wonder: how can I debug this?
 
-Vamos a ver como depurar código entre fences y código del navegador.
+Let’s see how to debug code inside fences and browser code.
 
-Para depurar código entre fences:
+To debug **fence code**:
 
-- Ponemos un breakpoint en el código entre fences.
-- Abrimos un terminal en modo JavaScript Debug terminal y ejecutamos:
+- Place a breakpoint inside the fence code.
+- Open a terminal in **JavaScript Debug Terminal** mode and run:
 
 ```bash
 npm run dev
 ```
 
-Si te fijas al ejecutar el servidor se para en el breakpoint y podemos depurar.
+When you run the server, it will stop at the breakpoint and you can debug.
 
-Importante, en modo desarrollo en local, cada vez que recargues la página se volverá a ejecutar el código entre fences, pero esto sólo pasa en modo desarrollo, en producción sólo se ejecuta una vez y en tiempo de build.
+Important: in local development mode, every time you reload the page the fence code will run again. But this only happens in dev mode — in production it runs once, at build time.
 
-¿Y cómo depuramos el código del navegador? Pues aquí como siempre, con las DevTools del navegador.
+And how do we debug **browser code**? Just like always — with the browser’s DevTools.
