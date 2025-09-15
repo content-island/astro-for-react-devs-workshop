@@ -1,5 +1,9 @@
 # Astro project creation and structure
 
+## Prerequisites
+
+Astro plugin VSCode installed.
+
 ## Creating a new Astro project
 
 To create a new Astro project, you can use the following command in your terminal:
