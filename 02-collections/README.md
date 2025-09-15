@@ -10,7 +10,8 @@ Vamos a cambiar la petición a la API para que nos devuelva varios datos. En est
 + const res = await fetch("https://dogapi.dog/api/v2/facts?limit=5");
 const response = await res.json();
 -const title = response?.data[0]?.attributes?.body ?? "Ooops api not working?";
-+ const facts = response?.data ?? [];
++ const data = response?.data ?? [];
++ const facts : string[] = data.map((item: any) => item.attributes.body);
 ---
 ```
 
@@ -21,8 +22,8 @@ Y en el markup:
 -    <h1>{title}</h1>
 + 	<h1>Dog Facts</h1>
 +    <ul>
-+      {facts.map((fact) => (
-+        <li>{fact.attributes.body}</li>
++      {facts.map((fact : string) => (
++        <li>{fact}</li>
 +      ))}
 +    </ul>
     <button id="cat-fact-button">Get Cat Fact</button>
@@ -30,4 +31,3 @@ Y en el markup:
   </body>
 
 ```
-

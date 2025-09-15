@@ -1,8 +1,7 @@
 ---
 const res = await fetch("https://dogapi.dog/api/v2/facts?limit=5");
 const response = await res.json();
-const data = response?.data ?? [];
-const facts : string[] = data.map((item: any) => item.attributes.body);
+const facts = response?.data ?? [];
 ---
 
 <html lang="en">
@@ -16,8 +15,8 @@ const facts : string[] = data.map((item: any) => item.attributes.body);
   <body>
  	<h1>Dog Facts</h1>
     <ul>
-      {facts.map((fact : string) => (
-        <li>{fact}</li>
+      {facts.map((fact : any) => (
+        <li>{fact.attributes.body}</li>
       ))}
     </ul>
     <button id="cat-fact-button">Get Cat Fact</button>
