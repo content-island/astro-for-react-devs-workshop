@@ -16,10 +16,9 @@ interface Props {
 }
 const { facts } = Astro.props;
 ---
+
 <ul>
-  {facts.map((fact) => (
-    <li>{fact}</li>
-  ))}
+  {facts.map((fact) => <li>{fact}</li>)}
 </ul>
 ```
 
@@ -29,7 +28,7 @@ In `src/pages/index.astro`, import the component and use it:
 
 ```diff
 ---
-+ import DogFacts from '../components/DogFacts.astro';
++ import DogFacts from '../components/DogFact.astro';
 const res = await fetch("https://dogapi.dog/api/v2/facts?limit=5");
 const response = await res.json();
 const data = response?.data ?? [];
@@ -51,3 +50,6 @@ const facts : string[] = data.map((item: any) => item.attributes.body);
   </body>
 ```
 
+What’s different compared to React props? The key point is that this only runs once, and once we’re on the client side, there’s no way to update the props. For example, this approach wouldn’t work as-is for the cat fact button we built earlier.
+
+And what if we need a component that changes? That’s where Client Islands come into play. We can create a Client Island with React, Svelte, Vue, or any other supported framework, and we can decide whether it runs only on the server or enables client-side execution. We’ll see this in more detail later.

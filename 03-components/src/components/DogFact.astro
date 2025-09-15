@@ -1,0 +1,10 @@
+---
+interface Props {
+  facts: string[];
+}
+const { facts } = Astro.props;
+---
+
+<ul>
+  {facts.map((fact) => <li>{fact}</li>)}
+</ul>
