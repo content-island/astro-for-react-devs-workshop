@@ -2,7 +2,7 @@
 
 What if we want to display a collection of items? That's a React piece of cake. We can use the JavaScript `map` function to transform an array of data into an array of React elements.
 
-Vamos a cambiar la petición a la API para que nos devuelva varios datos. En este caso, vamos a pedir 5 datos de perros.
+Let's change the request to the API so that it returns several pieces of data. In this case, we are going to request 5 pieces of data about dogs.
 
 ```diff
 ---
