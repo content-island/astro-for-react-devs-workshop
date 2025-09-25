@@ -51,19 +51,10 @@ src/
 
 Each markdown file includes frontmatter that matches our schema:
 
-_./src/content/postCollection/astro-image-component.md_
+You can get file content from the repo: 
 
-```markdown
----
-title: "Astro Image component - Complete Guide"
-description: "Complete guide to Astro's Image component: automatic optimization, lazy loading, and best practices for web images."
-image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop"
----
+https://github.com/content-island/astro-for-react-devs-workshop/tree/main/00-astro-101/06-get-collection/src/content/postCollection
 
-Your markdown content goes here...
-```
-
-> You can get the rest of the content files from the repo: 
 
 ## 2. Blog Pages Implementation
 
@@ -100,7 +91,7 @@ const posts = await getCollection("postCollection");
   <h1>Blog</h1>
   <ul>
     {
-      posts.map((post : any) => (
+      posts.map((post) => (
         <li>
           <a href={`/blog/${post.slug}`}>{post.data.title}</a>
         </li>
@@ -111,7 +102,7 @@ const posts = await getCollection("postCollection");
 </BaseLayout>
 ```
 
-> 
+> You will need to build the project to get rid of the error on `post` lack of type.
 
 Key features:
 
