@@ -51,6 +51,8 @@ src/
 
 Each markdown file includes frontmatter that matches our schema:
 
+_./src/content/postCollection/astro-image-component.md_
+
 ```markdown
 ---
 title: "Astro Image component - Complete Guide"
@@ -60,6 +62,8 @@ image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400
 
 Your markdown content goes here...
 ```
+
+> You can get the rest of the content files from the repo: 
 
 ## 2. Blog Pages Implementation
 
@@ -96,7 +100,7 @@ const posts = await getCollection("postCollection");
   <h1>Blog</h1>
   <ul>
     {
-      posts.map((post) => (
+      posts.map((post : any) => (
         <li>
           <a href={`/blog/${post.slug}`}>{post.data.title}</a>
         </li>
@@ -106,6 +110,8 @@ const posts = await getCollection("postCollection");
   <a href="/">Go back home</a>
 </BaseLayout>
 ```
+
+> 
 
 Key features:
 
