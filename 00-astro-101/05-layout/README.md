@@ -28,7 +28,6 @@ import "../styles.css";
 
 And even add a navigation link on the homepage:
 
-
 _./src/pages/index.astro_
 
 ```diff
@@ -37,9 +36,15 @@ _./src/pages/index.astro_
     <DogFacts facts={facts} />
     <button id="cat-fact-button">Get Cat Fact</button>
     <h2 id="cat-fact"></h2>
-+   <a href="/about">About</a>    
++   <a href="/about">About</a>
   </body>
 </html>
+```
+
+We can give it a try:
+
+```bash
+npm run dev
 ```
 
 But we are repeating a lot of code! The `<head>`, the `<html>`, and the `<body>` tags are all the same on both pages, and what if we have a common header or footer. This is not very DRY (Don't Repeat Yourself).
@@ -64,7 +69,7 @@ import "../styles.css";
     <title>Astro</title>
   </head>
   <body>
-    <slot/>
+    <slot />
   </body>
 </html>
 ```
@@ -121,7 +126,7 @@ And in the about page
 
 _./src/pages/about.astro_
 
-```diff
+````diff
 ---
 - import "../styles.css";
 + import BaseLayout from "../layouts/BaseLayout.astro";
@@ -143,7 +148,7 @@ _./src/pages/about.astro_
 -  </body>
 </html>
 
-There's only one problem: the title is always "Astro". We can fix that by passing a `title` prop to the layout component.
+There's only one problem: the title of the page is always "Astro". We can fix that by passing a `title` prop to the layout component.
 
 _./src/layouts/BaseLayout.astro_
 
@@ -166,7 +171,7 @@ import "../styles.css";
 -    <title>Astro</title>
 +    <title>{title}</title>
   </head>
-```
+````
 
 Now we go back to each page:
 
@@ -178,7 +183,7 @@ _./src/pages/index.astro_
     <h1>Dog Facts</h1>
 ```
 
-__./src/pages/about.astro_
+\__./src/pages/about.astro_
 
 ```diff
 -  <BaseLayout>
