@@ -122,3 +122,49 @@ When you run the server, it will stop at the breakpoint and you can debug.
 Important: in local development mode, every time you reload the page the fence code will run again. But this only happens in dev mode — in production it runs once, at build time.
 
 And how do we debug **browser code**? Just like always — with the browser’s DevTools.
+
+**Bonus** You can extract this to a _ts_ file but you will need to tweak the code a bit:
+
+_./src/pages/cat.ts_
+
+```ts
+async function getCatFact() {
+  const res = await fetch("https://catfact.ninja/fact");
+  const data = await res.json();
+  return data.fact;
+}
+
+export const setupCatFactButton = () => {
+  const button = document.getElementById("cat-fact-button");
+  const factEl = document.getElementById("cat-fact");
+
+  if (button && factEl) {
+    button.addEventListener("click", async () => {
+      const fact = await getCatFact();
+      factEl.innerText = fact;
+    });
+  }
+};
+```
+
+_./src/pages/index.astro_
+
+```diff
+// (...)
+
+<script>
++ import { setupCatFactButton } from "./cat";
++ setupCatFactButton();
+-  const button = document.getElementById("cat-fact-button");
+-  const factEl = document.getElementById("cat-fact");
+-
+-  if (button && factEl) {
+-    button.addEventListener("click", async () => {
+-      const res = await fetch("https://catfact.ninja/fact");
+-      const data = await res.json();
+-      factEl.innerText = data.fact;
+-    });
+-  }
+</script>
+
+```

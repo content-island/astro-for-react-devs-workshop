@@ -4,7 +4,10 @@
 
 We’re going to build the following site:
 
+https://stackblitz.com/github/content-island/workshop-final-step
+
 ![Full project, blog collection, minin about section](./content/01-full-project.jpg)
+
 
 It will include:
 
@@ -13,6 +16,8 @@ It will include:
 - A full “About” page that presents the author’s experience.
 
 Our starting point looks like this:
+
+https://stackblitz.com/github/content-island/workshop-start-step
 
 ![Empty starter screenshot, no blog post list, no about mini card](./content/02-empty-starter.jpg)
 

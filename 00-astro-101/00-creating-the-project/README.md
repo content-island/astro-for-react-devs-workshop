@@ -29,6 +29,8 @@ npm run dev
 
 ## Analyzing the project structure
 
+Let's analyze the project structure.
+
 ```
 blank-project/
 ├── public/             # Static assets (copied directly into final dist build folder)
@@ -47,7 +49,7 @@ Let's build the project
 npm run build
 ```
 
-We get the dist assets and a HTML.
+We get the dist assets and a HTML (one HTML per page, this is not SPA :)).
 
 ## Prettier
 
