@@ -103,7 +103,7 @@ Now let's style the dogs facts components.
 
 Let's add this styles at the bottom of the dog fact astro component
 
-_./src/components/DogFact.astro_
+_./src/components/DogFacts.astro_
 
 ```astro
 <style>
