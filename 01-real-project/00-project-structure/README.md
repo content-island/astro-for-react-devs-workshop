@@ -8,7 +8,6 @@ https://stackblitz.com/github/content-island/workshop-final-step
 
 ![Full project, blog collection, minin about section](./content/01-full-project.jpg)
 
-
 It will include:
 
 - A homepage that displays a list of posts.
@@ -57,5 +56,16 @@ Here’s an overview of the main root folders in this project:
 > See the docs for more details: https://docs.astro.build/en/guides/routing/#excluding-pages
 
 In the **astro.config.mjs** file, we’ve added the **tailwindcss** plugin (Astro provides a CLI command to install it easily).
+
+As you can see we have added @ts-check and the plugin section appears in red we can get rid of that:
+
+```diff
+export default defineConfig({
+  vite: {
+-    plugins:  [tailwindcss()],
++    plugins: /** @type {any} */ ([tailwindcss()]
+  },
+});
+```
 
 Finally, the **tsconfig.json** file configures TypeScript. In this project, we use it to define path aliases, so we can import modules with the `#/` prefix instead of long relative paths.
