@@ -4,6 +4,8 @@ We mentioned that Astro can easily integrate with your favorite frameworks. Let�
 
 As a quick practice exercise, we’re going to implement a _cool_ like button using React. (Of course, this could be done with plain vanilla JavaScript, but here we want to practice React.)
 
+Ideally we will use a lite solution like Preact or Solid, but since you’re React developers, let’s use React :).
+
 ## Step 1: Install React
 
 Let’s install the React integration for Astro:
@@ -48,13 +50,13 @@ For simplicity, we’ll just store the number of likes in memory (using `localSt
 _./src/pods/post/components/like-button.component.tsx_
 
 ```tsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const LikeButton: React.FC = () => {
   const [likes, setLikes] = useState<number>(0);
 
   useEffect(() => {
-    const storedLikes = localStorage.getItem('likes');
+    const storedLikes = localStorage.getItem("likes");
     if (storedLikes) {
       setLikes(parseInt(storedLikes, 10));
     }
@@ -63,7 +65,7 @@ export const LikeButton: React.FC = () => {
   const handleLike = () => {
     const newLikes = likes + 1;
     setLikes(newLikes);
-    localStorage.setItem('likes', newLikes.toString());
+    localStorage.setItem("likes", newLikes.toString());
   };
 
   return (
@@ -137,6 +139,8 @@ const { entry, likeCount, minReadText } = Astro.props;
   </div>
   <MarkdownRenderer content={entry.content} />
 ```
+
+> IMPORTANT: client:load allows the component to run on the client side, try to remove client:load and see what happens when clicking the button.
 
 Now let’s test it out:
 
