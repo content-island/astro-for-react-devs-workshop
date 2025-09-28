@@ -79,21 +79,21 @@ Now define the action itself:
 _src/actions/index.ts_
 
 ```ts
-import { defineAction } from 'astro:actions';
-import { addLike, getLikes } from './repository';
-import type { LikesResponse } from './model';
+import { defineAction } from "astro:actions";
+import { addLike, getLikes } from "./repository";
+import type { LikesResponse } from "./model";
 
 export const server = {
   addLike: defineAction<LikesResponse>({
     async handler(slug) {
       return { likes: await addLike(slug) };
-    }
+    },
   }),
   getLikes: defineAction<LikesResponse>({
     async handler(slug) {
       return { likes: await getLikes(slug) };
-    }
-  })
+    },
+  }),
 };
 ```
 
@@ -151,3 +151,11 @@ _./src/pods/post/components/body.astro_
   <MarkdownRenderer content={entry.content} />
 </div>
 ```
+
+Let's give a try:
+
+```bash
+npm run dev
+```
+
+We can debug it client and server side :).
