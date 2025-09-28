@@ -49,6 +49,7 @@ _./src/pages/posts/[slug].astro_
 
 ```astro
 ---
+import Layout from '#layouts/layout.astro';
 import { getAllPosts } from '#pods/post-collection/post-collection.api';
 import type { Post } from '#pods/post-collection/post-collection.model';
 
@@ -72,6 +73,7 @@ _./src/pages/posts/[slug].astro_
 
 ```diff
 ---
+- <h1>Hey I'm the post detail</h1>
 + <Layout title={entry.title}>
 +  <h2>{entry.title}</h2>
 + </Layout>

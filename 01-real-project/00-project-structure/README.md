@@ -69,3 +69,7 @@ export default defineConfig({
 ```
 
 Finally, the **tsconfig.json** file configures TypeScript. In this project, we use it to define path aliases, so we can import modules with the `#/` prefix instead of long relative paths.
+
+# Examples
+
+Let's get started with the examples, we will start simple and evolve (first update a componente, then a pod, then a page and so on...).
