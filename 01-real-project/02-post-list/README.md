@@ -48,7 +48,7 @@ export const getAllPosts = async () =>
   });
 ```
 
-This time we will load the posts directly the post pod, but we could make the call in the index page and pass the posts as props to the post list component.
+This time we will call `getAllPosts` in the post pod, but we could make the call in the index page and pass the posts as props to the post list component.
 
 Let's first check that data is being loaded correctly.
 
@@ -106,6 +106,7 @@ npm run dev
 ```
 
 Let's give it some style, we will create a component that will show a post card.
+
 We create a new folder inside the post-collection pod called components and inside we create a new file called post-card.astro.
 
 First we will define the code in the fences:
