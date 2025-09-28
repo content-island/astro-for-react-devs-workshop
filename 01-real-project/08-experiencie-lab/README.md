@@ -1,8 +1,6 @@
 # 08 Experience Lab
 
-We’ve learned a lot… but we haven’t yet applied our knowledge to a real-world scenario.
-
-Time to get our hands dirty in this hands-on lab!
+We’ve learned a lot… Time to get our hands dirty in this hands-on lab!
 
 ## Lab Overview
 
@@ -10,7 +8,7 @@ If you click on the About page, you’ll see an empty page. Our goal is to displ
 
 We’ll use the knowledge gained in the previous modules to implement this feature.
 
-First, we’ll explain the problem. Then we’ll provide tips and hints to help you solve it.
+First, we’ll explain the problem, and this time you will complete this hands on lab by yourself, following the steps below.
 
 ## Goal
 
@@ -67,7 +65,8 @@ export interface ExperienceSection {
 }
 ```
 
-Now let’s load the data from Content Island. This time, we’ll indicate that we want to load the nested collection.
+Now let’s load the data from Content Island. This time, we’ll indicate that we want to load the nested collection (includeRelatedContent flag set to true).
+
 We need to create a new file for the API call.
 
 _./src/pods/experience-collection/experience-collection.api.ts_
