@@ -111,7 +111,7 @@ Key features:
 
 ### Dynamic Post Pages
 
-Individual blog post pages are generated using dynamic routing with `[slug].astro`.
+Individual blog post pages are generated using dynamic routing with `[slug].astro`. Lest's create it inside the `blog` folder.
 
 _./src/pages/blog/[slug].astro_
 
@@ -137,7 +137,6 @@ const { Content } = await post.render();
   <img
     src={post.data.image}
     alt={post.data.title}
-    style="max-width: 100%; height: auto;"
   />
   <p>{post.data.description}</p>
   <article>

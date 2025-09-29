@@ -9,7 +9,7 @@ Astro also supports Tailwind and there's a plugin for it.
 
 ## Global CSS
 
-Let's add a global CSS file.
+Let's add a global CSS file in the `src` folder.
 
 _./src/styles.css_
 

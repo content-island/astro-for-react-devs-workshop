@@ -78,3 +78,5 @@ Create a `.prettierrc` file in the root of the project with the following conten
   ]
 }
 ```
+
+Important: You need to open the folder with the Astro project in a new VSCode window to get the Prettier plugin working.
