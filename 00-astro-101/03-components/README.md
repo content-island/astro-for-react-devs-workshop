@@ -4,7 +4,7 @@ Til now we have been coding everything in a single file, but as our app grows, w
 
 Let's create a simple component, to display the dogs fact.
 
-Create a new file in the `src/components` folder, called `DogFacts.astro`:
+Create a new folder in `src` called `components`. And a new file in the `src/components` folder, called `DogFacts.astro`:
 
 - This will receive the list of facts as a typed prop.
 - It will loop through the facts and display them in a list.

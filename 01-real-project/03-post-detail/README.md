@@ -6,7 +6,7 @@ Right now, if we try to navigate to a specific post detail page, we get a 404 er
 
 Let's start by creating the post detail page.
 
-We could try something like:
+Add a new folder **post** inside **src/pages**. Inside the post folder, create a new file named **index.astro**, and add, for example, the following:
 
 _./src/pages/posts/index.astro_
 
@@ -144,6 +144,7 @@ Let's give it a try:
 npm run dev
 ```
 
+AQUI
 Now let’s dive into the post content. We’ll create a separate component for this.
 
 _src/pods/post/post.pod.astro_
@@ -212,9 +213,9 @@ const { entry } = Astro.props;
 </Layout>
 ```
 
-It works, but it doesn’t look great yet. If we compare it with the original post, we see that we need both a header and a body. Let’s create two new components.
+It works, but it doesn’t look great yet. If we compare it with the original post, we see that we need both a header and a body. Let’s create two new components, for that inside the post pod add a new folder named **components**.
 
-**src/pods/post/components/header.astro**
+_src/pods/post/components/header.astro_
 
 ```astro
 ---
@@ -335,7 +336,7 @@ import Header from '#pods/post/components/header.astro';
 </section>
 ```
 
-Much better, but the content is not yet being rendered as HTML. To fix this, we can use a wrapper with _Marked_ and _highlight.js_ to render the content properly.
+Much better, but the content is not yet being rendered as HTML. To fix this, we can use a wrapper with _Marked_ and _highlight.js_ to render the content properly, and use it inside the body component.
 
 _src/pods/post/components/body.astro_
 

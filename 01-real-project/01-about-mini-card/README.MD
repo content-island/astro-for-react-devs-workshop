@@ -18,7 +18,7 @@ To access this data, Content Island provides a **client API library**. Let’s i
 npm install @content-island/api-client
 ```
 
-To fetch the data, we need to provide an **access token**. In this case, we’ll use a **secret token**, which you can find in your Content Island project settings.
+To fetch the data, we need to provide an **access token**. In this case, we’ll use a **secret token**, which you can find in your Content Island project settings. Lest’s create a .env file in the root of the project and add the token there:
 
 _.env_
 
@@ -38,7 +38,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()],
+    plugins: /** @type {any} */ ([tailwindcss()]),
   },
 +  env: {
 +    schema: {
@@ -53,16 +53,16 @@ export default defineConfig({
 });
 ```
 
-Now let’s create an instance of the client:
+Now, let’s create an instance of the client, add a **lib** folder inside **src**, and place a file named **client.ts** within it.
 
 _./src/lib/client.ts_
 
 ```ts
-import { createClient } from "@content-island/api-client";
-import { CONTENT_ISLAND_SECRET_TOKEN } from "astro:env/server";
+import { createClient } from '@content-island/api-client';
+import { CONTENT_ISLAND_SECRET_TOKEN } from 'astro:env/server';
 
 const client = createClient({
-  accessToken: CONTENT_ISLAND_SECRET_TOKEN,
+  accessToken: CONTENT_ISLAND_SECRET_TOKEN
 });
 
 export default client;
@@ -77,14 +77,14 @@ The author profile section is used in two places:
 - A **mini-bio card**
 - A **mini-bio hero**, displayed on the _About_ page
 
-We’ll  use the _mini-bio_ **pod** and add functionallity to fetch the author profile data and use it in both places.
+We’ll use the _mini-bio_ **pod** and add functionallity to fetch the author profile data and use it in both places.
 
 Some wiring is already in place:
 
 - Index pages use `pods/mini-bio`.
 - The `mini-bio` pod uses two components: **MiniBioCard** and **MiniBioHero**, depending on the props it receives.
 
-Let’s start by extracting the model from the Content Island project:
+Let’s start by extracting the model from the Content Island project, and add it to the **mini-bio.model.ts** file:
 
 **COPY FROM CONTENT ISLAND PROJECT**
 
@@ -112,12 +112,12 @@ Next, let’s add an API to load the author profile data:
 _./src/pods/mini-bio/mini-bio.api.ts_
 
 ```ts
-import client from "#lib/client.ts";
-import type { MiniBio } from "./mini-bio.model";
+import client from '#lib/client.ts';
+import type { MiniBio } from './mini-bio.model';
 
 export const getMiniBio = async () =>
   await client.getContent<MiniBio>({
-    contentType: "MiniBio",
+    contentType: 'MiniBio'
   });
 ```
 

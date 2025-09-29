@@ -2,7 +2,7 @@
 
 Til now we have been working on a single page. But most websites have multiple pages, and they share some common elements, like the header and footer.
 
-So if we want to create a second page, we could try something like:
+So if we want to create a second page, we could just create a new file in the `src/pages` folder, called `about.astro`:
 
 _./src/pages/about.astro_
 
@@ -51,9 +51,10 @@ But we are repeating a lot of code! The `<head>`, the `<html>`, and the `<body>`
 
 What can we do about it? We can create a layout component that wraps our pages and includes the common elements.
 
-> We will use slots to define where the page content will go, quite similar to React's `props.children`.
+Let's create a new folder in `src` called `layouts`. And a new file in the `src/layouts` folder, called `BaseLayout.astro`.
 
-_./src/layouts/BaseLayout.astro_
+> We will use slots to define where the page content will go, quite similar to React's `props.children`.
+> _./src/layouts/BaseLayout.astro_
 
 ```astro
 ---
@@ -106,7 +107,7 @@ const facts: string[] = data.map((item: any) => item.attributes.body);
     <h2 id="cat-fact"></h2>
     <a href="/about">About</a>
 +  </BaseLayout>
-</html>
+- </html>
 
 <script>
   const button = document.getElementById("cat-fact-button");
@@ -146,7 +147,7 @@ _./src/pages/about.astro_
     <a href="/">Go back home</a>
 +  </BaseLayout>
 -  </body>
-</html>
+- </html>
 
 There's only one problem: the title of the page is always "Astro". We can fix that by passing a `title` prop to the layout component.
 
