@@ -10,7 +10,7 @@ Let's get the list of posts from Content Island
 
 We are going to create a new Pod and we will call it post-collection.
 
-Let's add the post model.
+Let's add the post model to a new file called **post-collection.model.ts**.
 
 **Copy from Content Island**
 
@@ -50,7 +50,7 @@ export const getAllPosts = async () =>
 
 This time we will call `getAllPosts` in the post pod, but we could make the call in the index page and pass the posts as props to the post list component.
 
-Let's first check that data is being loaded correctly.
+Let's create a new pod file **post-collection.pod.astro** and check that data is being loaded correctly.
 
 _./src/pods/post-collection/post-collection.pod.astro_
 

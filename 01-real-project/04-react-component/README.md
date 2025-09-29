@@ -26,7 +26,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
 +  integrations: [react()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: /** @type {any} */ ([tailwindcss()]),
   },
   env: {
     schema: {
@@ -46,17 +46,18 @@ export default defineConfig({
 Now let’s create the React component for our like button.
 
 For simplicity, we’ll just store the number of likes in memory (using `localStorage`). In a real-world app, you’d probably want to persist this in a database.
+Add a new file named **like-button.component.tsx** inside the post pod components folder.
 
 _./src/pods/post/components/like-button.component.tsx_
 
 ```tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export const LikeButton: React.FC = () => {
   const [likes, setLikes] = useState<number>(0);
 
   useEffect(() => {
-    const storedLikes = localStorage.getItem("likes");
+    const storedLikes = localStorage.getItem('likes');
     if (storedLikes) {
       setLikes(parseInt(storedLikes, 10));
     }
@@ -65,7 +66,7 @@ export const LikeButton: React.FC = () => {
   const handleLike = () => {
     const newLikes = likes + 1;
     setLikes(newLikes);
-    localStorage.setItem("likes", newLikes.toString());
+    localStorage.setItem('likes', newLikes.toString());
   };
 
   return (

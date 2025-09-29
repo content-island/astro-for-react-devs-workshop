@@ -67,7 +67,7 @@ export interface ExperienceSection {
 
 Now let’s load the data from Content Island. This time, we’ll indicate that we want to load the nested collection (includeRelatedContent flag set to true).
 
-We need to create a new file for the API call.
+We need to create a new file for the API call, named **experience-collection.api.ts**, inside the experience-collection folder.
 
 _./src/pods/experience-collection/experience-collection.api.ts_
 
