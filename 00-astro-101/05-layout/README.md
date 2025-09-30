@@ -127,7 +127,7 @@ And in the about page
 
 _./src/pages/about.astro_
 
-````diff
+```diff
 ---
 - import "../styles.css";
 + import BaseLayout from "../layouts/BaseLayout.astro";
@@ -148,6 +148,8 @@ _./src/pages/about.astro_
 +  </BaseLayout>
 -  </body>
 - </html>
+
+```
 
 There's only one problem: the title of the page is always "Astro". We can fix that by passing a `title` prop to the layout component.
 
@@ -172,7 +174,7 @@ import "../styles.css";
 -    <title>Astro</title>
 +    <title>{title}</title>
   </head>
-````
+```
 
 Now we go back to each page:
 

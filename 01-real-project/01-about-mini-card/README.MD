@@ -168,7 +168,7 @@ import ShapeRectangle from '#assets/shapes/rectangle.svg';
 
 Let’s confirm the data is being received correctly:
 
-````diff
+```diff
 _./src/pods/mini-bio/components/mini-bio-card.astro_
 
 ```diff
@@ -188,7 +188,7 @@ _./src/pods/mini-bio/components/mini-bio-card.astro_
     <ShapeOval />
   </div>
 </section>
-````
+```
 
 Check the result in the browser:
 
