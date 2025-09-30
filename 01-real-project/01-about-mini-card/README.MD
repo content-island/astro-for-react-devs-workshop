@@ -127,10 +127,10 @@ _./src/pods/mini-bio/mini-bio.pod.astro_
 
 ```diff
 ---
-import type { MiniBioType } from './mini-bio.model';
 + import { getMiniBio } from './mini-bio.api';
 import MiniBioHero from './components/mini-bio-hero.astro';
 import MiniBioCard from './components/mini-bio-card.astro';
+import type { MiniBioType } from './mini-bio.model';
 
 
 interface Props {
