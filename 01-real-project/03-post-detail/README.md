@@ -51,7 +51,6 @@ _./src/pages/posts/[slug].astro_
 ---
 import Layout from '#layouts/layout.astro';
 import { getAllPosts } from '#pods/post-collection/post-collection.api';
-import type { Post } from '#pods/post-collection/post-collection.model';
 
 // Generate all possible paths
 export async function getStaticPaths() {
@@ -144,7 +143,6 @@ Let's give it a try:
 npm run dev
 ```
 
-AQUI
 Now let’s dive into the post content. We’ll create a separate component for this.
 
 _src/pods/post/post.pod.astro_
