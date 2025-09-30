@@ -63,7 +63,7 @@ As you can see we have added @ts-check and the plugin section appears in red we 
 export default defineConfig({
   vite: {
 -    plugins:  [tailwindcss()],
-+    plugins: /** @type {any} */ ([tailwindcss()]
++    plugins: /** @type {any} */ ([tailwindcss()])
   },
 });
 ```
