@@ -10,6 +10,10 @@ In this case, all the information is already available in a **Content Island pro
 
 > Tour of the model and the data
 
+Guides for this examples:
+
+https://github.com/content-island/astro-for-react-devs-workshop/tree/main/01-real-project
+
 # Setup
 
 To access this data, Content Island provides a **client API library**. Let’s install it:
@@ -20,7 +24,7 @@ npm install @content-island/api-client
 
 To fetch the data, we need to provide an **access token**. In this case, we’ll use a **secret token**, which you can find in your Content Island project settings. Lest’s create a .env file in the root of the project and add the token there:
 
-_.env_
+_/.env_
 
 ```
 CONTENT_ISLAND_SECRET_TOKEN=98bfcafff2e649ed1fccec36abde3379
@@ -69,6 +73,7 @@ export default client;
 ```
 
 > As you can see we get a error importing CONTENT_ISLAND_SECRET_TOKEN, we need to do a build in order to let astro create the type definitions for the env variables.
+
 
 # Usage
 

@@ -144,7 +144,6 @@ Let's give it a try:
 npm run dev
 ```
 
-AQUI
 Now let’s dive into the post content. We’ll create a separate component for this.
 
 _src/pods/post/post.pod.astro_

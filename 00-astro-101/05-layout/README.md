@@ -54,7 +54,8 @@ What can we do about it? We can create a layout component that wraps our pages a
 Let's create a new folder in `src` called `layouts`. And a new file in the `src/layouts` folder, called `BaseLayout.astro`.
 
 > We will use slots to define where the page content will go, quite similar to React's `props.children`.
-> _./src/layouts/BaseLayout.astro_
+
+_./src/layouts/BaseLayout.astro_
 
 ```astro
 ---
