@@ -30,7 +30,7 @@ In `src/pages/index.astro`, import the component and use it:
 
 ```diff
 ---
-+ import DogFacts from '../components/DogFacts.astro';
++ import DogFacts from './components/DogFacts.astro';
 const res = await fetch("https://dogapi.dog/api/v2/facts?limit=5");
 const response = await res.json();
 const data = response?.data ?? [];
