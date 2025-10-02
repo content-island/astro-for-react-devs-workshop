@@ -96,6 +96,7 @@ _./src/pods/experience-collection/experience-collection.pod.astro_
 ---
 
 <section class="flex flex-1 flex-col gap-10 px-6" aria-labelledby="experience-section-heading">
+-  <h2 class="text-tbase-500/90 text-3xl font-bold" id="experience-section-heading">{experienceContent.title}</h2>
 + <h2 class="text-tbase-500/90 text-3xl font-bold" id="experience-section-heading">{experienceContent.title}</h2>
 +  <ul>
 +    {experienceContent.experienceCollection.map((experience) => (
