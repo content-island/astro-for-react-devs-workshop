@@ -62,9 +62,9 @@ npm run build
 
 > If we’re in SSR mode, this code will run on every server request. It never runs in the browser.
 
-But can we run code in the browser? Of course! You can even use React, Vue, or Svelte for that.
+But can we run code in the browser? Of course! You can, even you can use use React, Vue, or Svelte for that.
 
-Let’s do a simple example: we’ll add a button that fetches and displays a cat fact. The button will be called **“Get Cat Fact”**.
+Let’s do a plain vanilla simple example: we’ll add a button that fetches and displays a cat fact. The button will be called **“Get Cat Fact”**.
 
 _./src/pages/index.astro_
 

@@ -9,6 +9,8 @@ Create a new folder in `src` called `components`. And a new file in the `src/com
 - This will receive the list of facts as a typed prop.
 - It will loop through the facts and display them in a list.
 
+_./src/components/DogFacts.astro_
+
 ```astro
 ---
 interface Props {
